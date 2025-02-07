@@ -65,7 +65,7 @@ export function LLM() {
 
         // Animate through the network
         const newActiveNodes = [];
-        // @ts-ignore
+        // @ts-expect-error err
         const newActiveConnections = [];
 
         // Add input node
@@ -119,7 +119,7 @@ export function LLM() {
 
         setActiveNodes(newActiveNodes);
         setActiveConnections((prevConnections) => {
-          // @ts-ignore
+          // @ts-expect-error err
           const newConnections = [...prevConnections, ...newActiveConnections];
           return Array.from(new Set(newConnections));
         });
